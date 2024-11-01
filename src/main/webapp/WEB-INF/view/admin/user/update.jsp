@@ -6,7 +6,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create User</title>
+                <title>Update User ${id}</title>
                 <!-- Latest compiled and minified CSS -->
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
                 <!-- Latest compiled JavaScript -->
@@ -19,17 +19,18 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-6 col-12 mx-auto">
-                            <h3>Create a User</h3>
-                            <br />
-                            <form:form action="/admin/user/create" method="post" modelAttribute="newUser">
-                                <div class="mb-2">
+                            <h3>Update a User</h3>
+                            <hr />
+                            <form:form action="/admin/user/update" method="post" modelAttribute="newUser">
+                                <div class="mb-2" style="display: none;">
+                                    <label class="form-label">Id:</label>
+                                    <form:input type="text" class="form-control" path="id" />
+                                </div>
+                                <div class="mb-2 ">
                                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                    <form:input type="email" path="email" class="form-control" />
+                                    <form:input type="email" path="email" class="form-control" disabled="true" />
                                 </div>
-                                <div class="mb-2">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <form:input type="password" path="password" class="form-control" />
-                                </div>
+
                                 <div class="mb-2">
                                     <label for="exampleInputPassword1" class="form-label">Phone Number</label>
                                     <form:input type="text" path="phone" class="form-control" />
@@ -43,7 +44,7 @@
                                     <form:input type="text" path="address" class="form-control" />
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-warning">Submit</button>
                             </form:form>
                         </div>
                     </div>
